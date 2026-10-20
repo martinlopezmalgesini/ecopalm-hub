@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "title": "Directorio de Agencias, Surveyors y Operadores Portuarios de Malasia",
+    "version": "1.0",
+    "updated": "2026-10-18"
+  },
+  "agency_categories": [
+    { "id": "surveyor", "label": "Inspectores de Calidad y Cantidad (Q&Q Surveyors)" },
+    { "id": "shipping_agent", "label": "Agencias Marítimas Portuarias (Shipping & Husbandry)" },
+    { "id": "customs_broker", "label": "Agentes de Aduanas y Tránsito K2 (Customs Brokers)" }
+  ],
+  "tiers": {
+    "tier_1": {
+      "id": "tier_1",
+      "label": "Tier 1: Institucional / Aceptación Universal LC",
+      "color": "emerald",
+      "desc": "Acreditados globalmente por TIC Council / IFIA / FONASBA. Riesgo nulo de colusión o manipulación."
+    },
+    "tier_2": {
+      "id": "tier_2",
+      "label": "Tier 2: Especialistas Reconocidos / Confirmar en LC",
+      "color": "blue",
+      "desc": "Reconocidos en el sector de aceites e ISCC. Requiere confirmación previa con el banco del comprador."
+    },
+    "tier_3": {
+      "id": "tier_3",
+      "label": "Tier 3: Agencias Locales / Alerta Crítica",
+      "color": "red",
+      "desc": "Sin acreditación internacional. Alto riesgo de conflicto de interés con la terminal o el vendedor."
+    }
+  },
+  "agencies": [
+    {
+      "id": "ag-sgs-my",
+      "name": "SGS (Malaysia) Sdn Bhd",
+      "category": "surveyor",
+      "tier": "tier_1",
+      "website": "https://www.sgs.com",
+      "hq": "Wisma SGS, Port Klang, Selangor",
+      "ports_covered": ["port-klang-westports", "port-klang-northport", "johor-pasir-gudang", "penang-port-prai", "bintulu-port", "lahad-datu-poic", "kuantan-port"],
+      "services": ["Certificados Q&Q", "Tank Cleanliness", "Wall Wash Test", "ICP-MS Halógenos/Metales", "First-Foot Sampling", "Detección de CPO adulterado"],
+      "broker_verdict": "Estándar de oro universal. Aceptado por el 100% de los bancos emisores en Cartas de Crédito UCP 600. Cero riesgo de sesgo local.",
+      "contract_clause": "Quality and Quantity at loading port shall be final and binding as determined by SGS (Malaysia) Sdn Bhd. Costs shall be shared 50/50 between Seller and Buyer."
+    },
+    {
+      "id": "ag-intertek-my",
+      "name": "Intertek Malaysia Sdn Bhd (Caleb Brett)",
+      "category": "surveyor",
+      "tier": "tier_1",
+      "website": "https://www.intertek.com",
+      "hq": "Kuala Lumpur / Port Klang",
+      "ports_covered": ["port-klang-westports", "port-klang-northport", "johor-pasir-gudang", "johor-tanjung-langsat", "kemaman-port", "bintulu-port"],
+      "services": ["Q&Q Surveying", "Biofuel Testing EN 14214", "Análisis de Fósforo y Cloro", "Muestreo Sellado Umpire", "Inspección de Serpentines"],
+      "broker_verdict": "Líder técnico en graneles energéticos. Altamente recomendado para lotes de UCO y POME destinados a plantas HVO/SAF europeas.",
+      "contract_clause": "Independent inspection shall be performed by Intertek (Malaysia) Sdn Bhd; load port results shall govern commercial invoice adjustment."
+    },
+    {
+      "id": "ag-amspec-my",
+      "name": "AmSpec Inspection Malaysia Sdn Bhd",
+      "category": "surveyor",
+      "tier": "tier_1",
+      "website": "https://www.amspecgroup.com",
+      "hq": "Pasir Gudang, Johor",
+      "ports_covered": ["johor-pasir-gudang", "johor-tanjung-langsat", "johor-pengerang-deepwater", "port-klang-westports", "kuantan-port"],
+      "services": ["Q&Q Liquid Bulk", "Cromatografía de Ácidos Grasos", "Determinación de M&I y FFA", "Control de Mermas en Muelle", "Coriolis Flowmeter Audits"],
+      "broker_verdict": "El inspector con mayor dominio en el polo Johor - Langsat - Pengerang. Imparcial y con laboratorios propios de alta precisión.",
+      "contract_clause": "AmSpec shall be appointed as independent surveyor at load port; composite samples to be retained for 90 days."
+    },
+    {
+      "id": "ag-bv-my",
+      "name": "Bureau Veritas (Malaysia) Sdn Bhd / Inspectorate",
+      "category": "surveyor",
+      "tier": "tier_1",
+      "website": "https://www.bureauveritas.com",
+      "hq": "Kuala Lumpur / Pasir Gudang",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "johor-pengerang-deepwater", "bintulu-port"],
+      "services": ["Marine Bulk Survey", "Tank Inspection (Cleanliness & ROB)", "First-Foot Analysis", "Verification of Shore vs Ship Figures"],
+      "broker_verdict": "Institución global de máxima solvencia. Especialistas en resolución de discrepancias entre mediciones de tierra y barco.",
+      "contract_clause": "Inspection company shall be Bureau Veritas (Malaysia) Sdn Bhd under FOSFA rules."
+    },
+    {
+      "id": "ag-cu-my",
+      "name": "Control Union (Malaysia) Sdn Bhd",
+      "category": "surveyor",
+      "tier": "tier_2",
+      "website": "https://malaysia.controlunion.com",
+      "hq": "Port Tech Tower, Klang, Selangor",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "lahad-datu-poic", "bintulu-port", "kemaman-port", "sabah-kunak-tawau"],
+      "services": ["Auditorías de Balance de Masas ISCC", "FOSFA Quality Surveying", "Trazabilidad de Cadena de Custodia", "Supervisión de Muestras Selladas"],
+      "broker_verdict": "Excelente en biomasa y trazabilidad ISCC EU. Para análisis químicos puros HVO, confirmar que el comprador acepte su laboratorio.",
+      "contract_clause": "Sustainability compliance and mass balance verification supervised by Control Union (Malaysia) Sdn Bhd."
+    },
+    {
+      "id": "ag-saybolt-my",
+      "name": "Saybolt (Malaysia) Sdn Bhd (Core Laboratories)",
+      "category": "surveyor",
+      "tier": "tier_2",
+      "website": "https://www.corelab.com/saybolt",
+      "hq": "Pasir Gudang, Johor",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "johor-tanjung-langsat"],
+      "services": ["Q&Q Maritime Survey", "Calibración de Tanques", "Análisis de Hidrocarburos y Biocombustibles", "Supervisión de Carga Marina"],
+      "broker_verdict": "Sólido y muy profesional en cargas químicas y mezclas bio. Presencia concentrada principalmente en el Estrecho de Malaca.",
+      "contract_clause": "Saybolt (Malaysia) Sdn Bhd shall act as independent inspection agency at load berth."
+    },
+    {
+      "id": "ag-cotecna-my",
+      "name": "Cotecna Trade Services Malaysia Sdn Bhd",
+      "category": "surveyor",
+      "tier": "tier_2",
+      "website": "https://www.cotecna.com",
+      "hq": "Bandar Botanic, Klang",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "penang-port-prai"],
+      "services": ["Agrícola & Residuos Survey", "Muestreo FOSFA", "Determinación de Peso por Ullage", "Certificados de Exportación"],
+      "broker_verdict": "Reconocido en mercados de Oriente Medio y Europa del Sur. Confiable para graneles de POME y SPO.",
+      "contract_clause": "Load port quantity and quality inspection by Cotecna Trade Services under agreed tolerances."
+    },
+    {
+      "id": "ag-wilhelmsen-my",
+      "name": "Wilhelmsen Port Services Malaysia Sdn Bhd",
+      "category": "shipping_agent",
+      "tier": "tier_1",
+      "website": "https://www.wilhelmsen.com",
+      "hq": "KL Sentral, Kuala Lumpur",
+      "ports_covered": ["port-klang-westports", "port-klang-northport", "johor-pasir-gudang", "johor-tanjung-langsat", "kuantan-port", "bintulu-port", "lumut-port-perak"],
+      "services": ["Consignación de Buques Quimiqueros", "Emisión Legal de Bill of Lading (B/L)", "Charterer's Protective Agent (CPA)", "Liquidación de Prácticos y Muelles"],
+      "broker_verdict": "El consignatario más seguro para compradores en FOB. Rigor absoluto: nunca firmará un B/L antefechado ni ocultará daños en el SOF.",
+      "contract_clause": "In FOB purchases, Buyer reserves the right to appoint Wilhelmsen Port Services as Charterer's Protective Agent (CPA)."
+    },
+    {
+      "id": "ag-gac-my",
+      "name": "GAC Shipping (Malaysia) Sdn Bhd",
+      "category": "shipping_agent",
+      "tier": "tier_1",
+      "website": "https://www.gac.com",
+      "hq": "Petaling Jaya, Selangor",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "penang-port-prai", "kuantan-port", "kemaman-port", "bintulu-port", "johor-pengerang-deepwater"],
+      "services": ["Tanker Husbandry", "Control del Statement of Facts (SOF)", "Gestión de Despacho Aduanero de Buque", "Supervisión de Ventanas de Atraque"],
+      "broker_verdict": "Especialistas en buques tanque y parcel tankers. Esenciales para evitar que la terminal infle artificialmente los tiempos de bombeo.",
+      "contract_clause": "Port agency services shall be coordinated under GAC Shipping (Malaysia) standard terms of agency."
+    },
+    {
+      "id": "ag-iss-my",
+      "name": "Inchcape Shipping Services (ISS) Malaysia",
+      "category": "shipping_agent",
+      "tier": "tier_1",
+      "website": "https://www.iss-shipping.com",
+      "hq": "Westports Business Centre, Pulau Indah",
+      "ports_covered": ["port-klang-westports", "penang-port-prai", "johor-pasir-gudang", "bintulu-port", "lahad-datu-poic"],
+      "services": ["Port Agency", "Supervisión de B/L Clean on Board", "Owner's Protective Agent (OPA)", "Coordinación con Autoridades Portuarias"],
+      "broker_verdict": "Consignatario de referencia internacional. Muy efectivo cuando el vendedor intenta imponer un agente de muelle local.",
+      "contract_clause": "Vessel shall be consigned to Inchcape Shipping Services acting on behalf of Charterers."
+    },
+    {
+      "id": "ag-benline-my",
+      "name": "Ben Line Agencies (Malaysia) Sdn Bhd",
+      "category": "shipping_agent",
+      "tier": "tier_1",
+      "website": "https://www.benlineagencies.com",
+      "hq": "Johor Bahru (Menara Landmark) / Klang",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "johor-tanjung-langsat", "penang-port-prai", "bintulu-port", "lahad-datu-poic", "sabah-kunak-tawau"],
+      "services": ["Chemical Tanker Operations", "Offshore Marine Support", "Custodia Documental de B/L", "Bunkering Coordination"],
+      "broker_verdict": "Dominio histórico de las terminales de Borneo Oriental (Sabah/Sarawak). Excelente reputación institucional.",
+      "contract_clause": "Agency attendance at East Malaysia loading ports by Ben Line Agencies (Malaysia) Sdn Bhd."
+    },
+    {
+      "id": "ag-wallem-my",
+      "name": "Wallem Shipping (Malaysia) Sdn Bhd",
+      "category": "shipping_agent",
+      "tier": "tier_2",
+      "website": "https://www.wallem.com",
+      "hq": "Kuala Lumpur / Pasir Gudang",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "bintulu-port"],
+      "services": ["Port Husbandry", "Tanker Clearing", "Trip Coordination", "Master Assistance"],
+      "broker_verdict": "Agencia técnica sólida para buques tanque de tamaño medio. Recomendable verificar previamente con el fletador.",
+      "contract_clause": "Port operations assisted by Wallem Shipping (Malaysia) under BIMCO standard guidelines."
+    },
+    {
+      "id": "ag-tasco-my",
+      "name": "Tasco Berhad (Yusen Logistics Group)",
+      "category": "customs_broker",
+      "tier": "tier_1",
+      "website": "https://www.tasco.com.my",
+      "hq": "Shah Alam, Selangor",
+      "ports_covered": ["port-klang-westports", "port-klang-northport", "johor-pasir-gudang", "penang-port-prai", "kuantan-port", "lumut-port-perak"],
+      "services": ["Despacho Aduanero Formulario K2", "Auditoría de Licencias MPOB", "Clasificación HS UCO vs SPO", "Gestión de Tránsitos Fiscales"],
+      "broker_verdict": "Compañía cotizada con licencia aduanera directa. Cero riesgo de reclasificación arancelaria fraudulenta.",
+      "contract_clause": "Customs export declaration (Form K2) shall be filed under correct tariff heading by Tasco Berhad."
+    },
+    {
+      "id": "ag-pkt-my",
+      "name": "PKT Logistics Group Sdn Bhd",
+      "category": "customs_broker",
+      "tier": "tier_1",
+      "website": "https://pktgroup.com",
+      "hq": "The Ship Campus, Shah Alam",
+      "ports_covered": ["port-klang-westports", "port-klang-northport", "penang-port-prai"],
+      "services": ["Aduanas Marítimas K2", "Transporte Terrestre en Cisterna", "Almacenamiento Fiscal", "Coordinación Portuaria"],
+      "broker_verdict": "Líder en infraestructura terrestre y conexiones aduaneras en la costa oeste. Muy ágil con la aduana de Port Klang.",
+      "contract_clause": "Port customs processing executed strictly in compliance with Royal Malaysian Customs regulations."
+    },
+    {
+      "id": "ag-fm-my",
+      "name": "FM Global Logistics (M) Sdn Bhd",
+      "category": "customs_broker",
+      "tier": "tier_1",
+      "website": "https://www.fmgloballogistics.com",
+      "hq": "Port Klang, Selangor",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "penang-port-prai", "kuantan-port", "kemaman-port"],
+      "services": ["Customs Brokerage K2", "Liquid ISO Tanks", "Flexitanks Clearance", "MPOB Declarations"],
+      "broker_verdict": "Excelente si la operación se realiza en ISO Tanks o flexitanques, además de graneles líquidos en barco.",
+      "contract_clause": "Freight and customs forwarding executed by FM Global Logistics under Malaysian Customs Act."
+    },
+    {
+      "id": "ag-pos-my",
+      "name": "Pos Logistics Berhad",
+      "category": "customs_broker",
+      "tier": "tier_2",
+      "website": "https://www.poslogistics.com.my",
+      "hq": "Kuala Lumpur",
+      "ports_covered": ["port-klang-westports", "johor-pasir-gudang", "kuantan-port"],
+      "services": ["Despacho Aduanero K2", "Transporte Nacional", "Warehousing", "Licencias de Tránsito"],
+      "broker_verdict": "Operador paraestatal de gran tamaño. Más burocrático pero con alta seguridad jurídica.",
+      "contract_clause": "Export procedures cleared under Pos Logistics official customs agency credentials."
+    }
+  ],
+  "casuistry_matrix": [
+    {
+      "id": "cas-fob-buyer",
+      "incoterm": "FOB",
+      "nominator": "buyer",
+      "agent_tier": "tier_1",
+      "status": "GREEN",
+      "title": "FOB Estándar: Comprador nombra Agente Tier 1 (Charterer's Agent)",
+      "risk_analysis": "El comprador fleta el buque y designa una agencia global (ej. Wilhelmsen, GAC). El agente obedece exclusivamente al armador y al comprador. Cero riesgo de retención del B/L o de manipulación de las horas de sobrestadía (SOF).",
+      "operational_rule": "Configuración ideal. Exigir al comprador que envíe la confirmación de nombramiento de la agencia al menos 7 días antes del Laycan.",
+      "spa_clause": "The vessel shall be consigned to Buyer's nominated agent at loading port. Port agent shall report Statement of Facts independently to both parties."
+    },
+    {
+      "id": "cas-fob-seller-imposed",
+      "incoterm": "FOB",
+      "nominator": "seller",
+      "agent_tier": "tier_2",
+      "status": "AMBER",
+      "title": "FOB de Riesgo: Vendedor o Terminal impone Agente Portuario Local",
+      "risk_analysis": "El vendedor impone que el buque se consigne a su agencia local 'amiga'. Riesgos: (1) El agente manipula el SOF imputando retrasos de tubería al barco para generar Demurrage; (2) El agente retiene los 3 B/L originales como moneda de cambio ante disputas comerciales.",
+      "operational_rule": "BLINDAJE OBLIGATORIO: Si no se puede evitar la imposición del agente, el comprador DEBE nombrar un Agente Protector (CPA / OPA) independiente (ej. Inchcape) para supervisar la firma del B/L y auditar el reloj de bombeo.",
+      "spa_clause": "Should Seller require the vessel to be consigned to Seller's nominated agent at loading port, Buyer reserves the right to appoint a Charterer's Protective Agent (CPA) at Buyer's expense to supervise cargo sampling, B/L issuance and Statement of Facts accounting."
+    },
+    {
+      "id": "cas-cif-seller-unverified",
+      "incoterm": "CIF",
+      "nominator": "seller",
+      "agent_tier": "tier_3",
+      "status": "RED",
+      "title": "CIF Peligroso: Vendedor fleta con Agencia Marítima No Acreditada",
+      "risk_analysis": "El vendedor contrata el flete marítimo y nombra a un agente local afín. RIESGO CRÍTICO DE FRAUDE DOCUMENTAL: (1) Emisión de B/L antefechado (Backdated B/L) si el barco termina de bombear después de la fecha límite de la LC; (2) Presión al Capitán con cartas de indemnidad (LOI privadas) para ocultar reservas de calidad y forzar un B/L 'Clean on Board' falso.",
+      "operational_rule": "ALERTA ROJA: El comprador no debe aceptar un contrato CIF sin auditar previamente qué agencia marítima emitirá el B/L y qué inspectores realizarán el Q&Q.",
+      "spa_clause": "Bill of Lading must be strictly dated upon completion of loading and countersigned by an internationally recognized shipping agency (Tier 1). No Letter of Indemnity (LOI) to suppress Master's remarks or backdate transport documents shall be permitted."
+    },
+    {
+      "id": "cas-cif-seller-tier1",
+      "incoterm": "CIF",
+      "nominator": "seller",
+      "agent_tier": "tier_1",
+      "status": "GREEN",
+      "title": "CIF Seguro: Vendedor fleta con Agencia Marítima Tier 1",
+      "risk_analysis": "El vendedor fleta el buque pero consigna la escala a una multinacional (Wilhelmsen, GAC, Ben Line). El riesgo de fraude documental se anula porque estas agencias tienen departamentos legales centralizados que se niegan terminantemente a emitir B/L antefechados.",
+      "operational_rule": "Válido y seguro. Asegurarse de que el banco emisor de la LC reciba confirmación bancaria directa de la autenticidad del B/L.",
+      "spa_clause": "Transport documents under this CIF sale shall be issued exclusively through a Tier 1 internationally accredited shipping agency."
+    }
+  ],
+  "appointment_checklist": [
+    {
+      "step": 1,
+      "title": "Instrucción de Muestreo de Primer Pie (First-Foot Sampling)",
+      "instruction": "Ordenar por escrito al inspector que detenga el bombeo tras cargar los primeros 200-300 TM (30 cm en tanque de buque) y analice agua, metales y partículas antes de autorizar el bombeo masivo."
+    },
+    {
+      "step": 2,
+      "title": "Custodia de Muestras Selladas por 90 Días (Retention Samples)",
+      "instruction": "Exigir la preparación de 4 juegos de muestras compuestas de 1 litro, selladas y rubricadas por capitán e inspector: Comprador, Vendedor, Buque y Árbitro (Umpire sample) en laboratorio climatizado."
+    },
+    {
+      "step": 3,
+      "title": "Auditoría de Mediciones de Tanque de Tierra vs. Buque (Loss Control)",
+      "instruction": "Instruir al inspector para que mida altura, temperatura y densidad de tanques de tierra antes y después, y cruce las figuras con el ullage del barco. Cualquier diferencia superior al 0.3% debe ser registrada formalmente."
+    },
+    {
+      "step": 4,
+      "title": "Inspección de Limpieza de Tubería Previa (Line Cleanliness & Pigging)",
+      "instruction": "Exigir certificado visual y de soplado de la tubería portuaria verificando que fue vaciada mediante pig neumático antes de conectar mangueras para evitar arrastre de CPO virgen o PFAD."
+    },
+    {
+      "step": 5,
+      "title": "Inspección de Serpentines de Calefacción del Buque (Heating Coils Check)",
+      "instruction": "Verificar que los serpentines de vapor de las bodegas del barco hayan sido probados a presión hidrostática antes de cargar para descartar fugas de agua o condensado que arruinen el UCO durante la travesía."
+    },
+    {
+      "step": 6,
+      "title": "Supervisión Estricta del Statement of Facts (SOF)",
+      "instruction": "Instruir al surveyor para que anote el minutaje exacto de conexión, soplado, interrupciones por lluvia y desconexión de mangueras, impidiendo que la terminal cargue retrasos propios a la cuenta de laytime."
+    }
+  ]
+}

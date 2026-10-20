@@ -1,0 +1,494 @@
+{
+  "meta": {
+    "title": "Infraestructura Portuaria y Rutas Marítimas de Malasia",
+    "version": "2.0",
+    "updated": "2026-10-18",
+    "target_parcel_mt": 5000
+  },
+  "materials": [
+    { "id": "UCO", "label": "UCO (Used Cooking Oil)", "color": "emerald" },
+    { "id": "POME", "label": "POME Oil (Palm Oil Mill Effluent)", "color": "blue" },
+    { "id": "SBEO", "label": "SBEO (Spent Bleaching Earth Oil)", "color": "amber" },
+    { "id": "SPO", "label": "SPO (Sludge Palm Oil)", "color": "orange" },
+    { "id": "PFAD", "label": "PFAD (Palm Fatty Acid Distillate)", "color": "slate" }
+  ],
+  "ports": [
+    {
+      "id": "port-klang-westports",
+      "name": "Port Klang (Westports)",
+      "region": "Pulau Indah, Selangor (Costa Oeste)",
+      "lat": 2.9469,
+      "lng": 101.3090,
+      "draft": "11.5m - 16.0m (Hasta 120.000 DWT)",
+      "berths": "LBT 1, LBT 2, LBT 3, LBT 4, LBT 4A, LBT 5",
+      "description": "Hub número 1 de la costa oeste para UCO y biocombustibles hacia ARA y España. Sin restricción de marea para 5.000 TM.",
+      "pipelines": [
+        {
+          "id": "PKW-STL-01",
+          "operator": "Stolthaven Westports Sdn Bhd",
+          "route": "Tanques Stolthaven → Muelles LBT 1, LBT 2 y LBT 4A",
+          "specs": "8\" (200 mm) | Acero Inox SS316L | Steam-traced + Closed-loop piggable",
+          "rate": "450-650 TM/h",
+          "pumping_time_5000mt": "8 a 11 horas",
+          "allowed": ["UCO", "POME"],
+          "restrictions": "Prohibido SBEO bruto con tierras abrasivas. Uso preferente para cargas HVO/SAF con límites estrictos de halógenos y metales."
+        },
+        {
+          "id": "PKW-STL-02",
+          "operator": "Stolthaven Westports Sdn Bhd",
+          "route": "Tanques de Acero al Carbono Calefactados → Colector LBT 1 y LBT 2",
+          "specs": "8\"-10\" (200-250 mm) | Acero al Carbono con epoxi fenólico | Steam-traced",
+          "rate": "400-550 TM/h",
+          "pumping_time_5000mt": "9 a 12.5 horas",
+          "allowed": ["POME", "SPO", "PFAD", "UCO"],
+          "restrictions": "Requiere pigging bidireccional y soplado con nitrógeno entre lotes de distinto ácido graso libre (FFA)."
+        },
+        {
+          "id": "PKW-WPM-03",
+          "operator": "Westports Malaysia / Mewah / Ecolex",
+          "route": "Tanques de Cabecera LBT → Common Pipe Corridor → LBT 2, 3 y 5",
+          "specs": "10\"-12\" (250-300 mm) | Acero Carbono API 5L Gr. B | Steam-traced",
+          "rate": "500-700 TM/h",
+          "pumping_time_5000mt": "7 a 10 horas",
+          "allowed": ["POME", "PFAD", "SPO", "SBEO"],
+          "restrictions": "Línea compartida. Exige purga previa (line displacement) y certificado de limpieza de línea para cargas ISCC EU."
+        }
+      ]
+    },
+    {
+      "id": "port-klang-northport",
+      "name": "Port Klang (Northport)",
+      "region": "Tanjung Harapan, Selangor (Costa Oeste)",
+      "lat": 3.0286,
+      "lng": 101.3631,
+      "draft": "10.5m - 12.0m (Handysize / MR hasta 45.000 DWT)",
+      "berths": "Wharf 12, Wharf 13, Wharf 24, Wharf 25",
+      "description": "Puerto histórico para aceites y residuos ácidos. Tarifas de bulking más competitivas que Westports para POME y SPO.",
+      "pipelines": [
+        {
+          "id": "PKN-FIM-01",
+          "operator": "Fima Bulking Services Bhd (FBSB)",
+          "route": "Terminal Fima (Zona Bio) → Puente Aéreo → Wharf 24 y 25",
+          "specs": "6\"-8\" (150-200 mm) | Acero Inox SS304/SS316 | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["UCO", "POME"],
+          "restrictions": "Línea dedicada libre de contaminación con CPO virgen para blindar trazabilidad ISCC."
+        },
+        {
+          "id": "PKN-FIM-02",
+          "operator": "Fima Bulking Services Bhd (FBSB)",
+          "route": "Tanques Residuos Ácidos → Shared Pipe Bridge → Wharf 12, 13, 24 y 25",
+          "specs": "8\" (200 mm) | Acero Carbono sin recubrir | Heavy Steam-Tracing (60°C)",
+          "rate": "350-500 TM/h",
+          "pumping_time_5000mt": "10 a 14 horas",
+          "allowed": ["POME", "SPO", "PFAD", "SBEO"],
+          "restrictions": "Si se bombea SBEO, exige lavado con agua caliente/vapor y pig de espuma dura tras la operación."
+        },
+        {
+          "id": "PKN-FGV-03",
+          "operator": "FGV Johore Bulkers (Northport)",
+          "route": "Tanques FGV Northport → Galería Elevada → Wharf 24 y 25",
+          "specs": "8\"-10\" (200-250 mm) | Carbono / Inox en tramos | Steam-traced",
+          "rate": "400-500 TM/h",
+          "pumping_time_5000mt": "10 a 12.5 horas",
+          "allowed": ["POME", "PFAD", "SPO"],
+          "restrictions": "No recomendada para UCO destinado a HVO directo sin auditar los últimos 3 bombeos (Prior Cargo List)."
+        }
+      ]
+    },
+    {
+      "id": "lumut-port-perak",
+      "name": "Lumut Port (LMT & Lekir)",
+      "region": "Perak (Costa Oeste Norte)",
+      "lat": 4.2492,
+      "lng": 100.6619,
+      "draft": "10.0m - 12.0m (Hasta 45.000 DWT)",
+      "berths": "LMT Liquid Bulk Berth",
+      "description": "Acceso directo a las extractoras de Perak. Ideal para capturar POME y SPO evitando el flete en camión hasta Klang.",
+      "pipelines": [
+        {
+          "id": "LUM-LMT-01",
+          "operator": "Lumut Maritime Terminal / Bulkers",
+          "route": "Parque de Tanques LMT → Corredor de Muelle → LMT Berth",
+          "specs": "8\" (200 mm) | Acero Carbono y SS304 | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "PFAD", "SBEO"],
+          "restrictions": "Excelente para cargar los primeros 5.000 TM de POME ácido y completar buque en Port Klang. Exige pigging neumático."
+        },
+        {
+          "id": "LUM-OLE-02",
+          "operator": "Complejo Oleoquímico Lumut (KLK / PGEO)",
+          "route": "Tanques de Refinería → Enlace Privado → LMT Berth",
+          "specs": "6\"-8\" (150-200 mm) | Acero Inox SS316 | Steam-traced",
+          "rate": "350-500 TM/h",
+          "pumping_time_5000mt": "10 a 14 horas",
+          "allowed": ["POME", "PFAD"],
+          "restrictions": "Línea privada oleoquímica. Accesible únicamente comprando FOB directo a la planta."
+        }
+      ]
+    },
+    {
+      "id": "penang-port-prai",
+      "name": "Penang Port (PBCT)",
+      "region": "Butterworth, Penang (Norte)",
+      "lat": 5.3789,
+      "lng": 100.3705,
+      "draft": "10.0m - 11.0m (First Load Port para buques MR)",
+      "berths": "Vegetable Oil Dolphin Berth / PBCT Liquid Pier",
+      "description": "Salida para el norte de Malasia (Penang, Perak, Kedah). Los buques MR cargan las primeras 5.000 TM aquí y bajan a completar a Klang o Johor.",
+      "pipelines": [
+        {
+          "id": "PNG-FIM-01",
+          "operator": "Fima Bulking / Butterworth Bulking Installation",
+          "route": "Tanques Costeros Prai → Galería Aérea Marina (1.2 km) → Dolphin Berth",
+          "specs": "6\"-8\" (150-200 mm) | Acero Inox SS304 y Carbono | Heavy Steam-Tracing",
+          "rate": "250-400 TM/h",
+          "pumping_time_5000mt": "12.5 a 20 horas",
+          "allowed": ["UCO", "POME"],
+          "restrictions": "Paso de 1.2 km sobre el mar: enfriamiento crítico. Prohibido detener el bombeo de POME más de 30 min sin soplar la línea."
+        },
+        {
+          "id": "PNG-FGV-02",
+          "operator": "FGV Bulkers Prai",
+          "route": "Tanques FGV Prai → Puente de Tuberías → Liquid Berth",
+          "specs": "8\" (200 mm) | Acero Carbono | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "PFAD", "SBEO"],
+          "restrictions": "Línea compartida con oleoquímicos. Requiere pigging neumático completo al terminar el lote."
+        }
+      ]
+    },
+    {
+      "id": "johor-tanjung-langsat",
+      "name": "Tanjung Langsat Port (TLP)",
+      "region": "Pasir Gudang / Langsat, Johor (Sur)",
+      "lat": 1.4519,
+      "lng": 104.0114,
+      "draft": "13.5m - 15.0m (Handysize a LR2/Aframax)",
+      "berths": "TLP Liquid Berths 1 al 7",
+      "description": "Centro tecnológico para materias primas HVO/SAF. Conexión directa a refinerías y plantas de pretratamiento.",
+      "pipelines": [
+        {
+          "id": "JHR-DTL-01",
+          "operator": "Dialog Terminals Langsat 3 (DTL 3)",
+          "route": "Tanques Bio DTL 3 → Biofuel Dedicated Rack → TLP Berths 1, 2 y 3",
+          "specs": "8\"-10\" (200-250 mm) | Acero Inox SS316L | Caudalímetros Coriolis",
+          "rate": "500-800 TM/h",
+          "pumping_time_5000mt": "6.5 a 10 horas",
+          "allowed": ["UCO", "POME"],
+          "restrictions": "100% dedicada a residuos renovables. Prohibido bombear CPO virgen, combustibles fósiles o SBEO crudo."
+        },
+        {
+          "id": "JHR-DTL-02",
+          "operator": "Dialog Terminals Langsat 1 & 2 (DTL 1/2)",
+          "route": "Tanques DTL 1/2 → Main Jetty Corridor → TLP Berths 1 al 5",
+          "specs": "10\"-12\" (250-300 mm) | Acero Carbono y SS316 | Insulated & Steam-traced",
+          "rate": "600-900 TM/h",
+          "pumping_time_5000mt": "5.5 a 8.5 horas",
+          "allowed": ["POME", "UCO", "PFAD"],
+          "restrictions": "Pigging automatizado con nitrógeno. Óptimo para consolidar lotes de 5.000 a 15.000 TM hacia ARA o Mediterráneo."
+        },
+        {
+          "id": "JHR-TLP-03",
+          "operator": "TLP Terminal / EcoOils / Complejo Industrial",
+          "route": "Refinerías de Pretratamiento Langsat → Corredor TLP (1.8 km) → Berths 3, 4 y 6",
+          "specs": "6\"-8\" (150-200 mm) | Acero Inox SS304/316 y Carbono | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "SBEO", "PFAD"],
+          "restrictions": "Línea larga de 1.8 km. Requiere precalentamiento continuo de línea 4 horas antes de bombear."
+        }
+      ]
+    },
+    {
+      "id": "johor-pasir-gudang",
+      "name": "Pasir Gudang (Johor Port)",
+      "region": "Johor Port Berhad, Johor (Sur)",
+      "lat": 1.4312,
+      "lng": 103.9048,
+      "draft": "11.5m - 13.0m (VO1/VO2); 8.0m - 9.5m (VO3/VO4)",
+      "berths": "Vegetable Oil Jetty VO1-VO4; Hazardous BT1-BT4",
+      "description": "Mayor complejo de almacenamiento y refino del mundo. Enlace con extractoras y plantas del sur peninsular.",
+      "pipelines": [
+        {
+          "id": "JHR-JPB-01",
+          "operator": "Johor Port Berhad / FGV Johore Bulkers",
+          "route": "Tanques FGV/JPB (Zona Segregada ISCC) → Central Manifold → VO1 y VO2",
+          "specs": "8\" (200 mm) | Acero Inox SS304/SS316 | Steam-traced",
+          "rate": "350-500 TM/h",
+          "pumping_time_5000mt": "10 a 14 horas",
+          "allowed": ["UCO", "POME", "PFAD"],
+          "restrictions": "Segregada de líneas RBD. Obligatorio First-Foot Sample verificado por SGS/Intertek en tanque de buque."
+        },
+        {
+          "id": "JHR-JPB-02",
+          "operator": "Johor Port Berhad (Common User Line)",
+          "route": "Parque General de Bulking → Common Carrier Rack → VO1 a VO4",
+          "specs": "8\"-10\" (200-250 mm) | Acero Carbono API 5L | Steam-traced continuo",
+          "rate": "400-600 TM/h",
+          "pumping_time_5000mt": "8.5 a 12.5 horas",
+          "allowed": ["POME", "SPO", "SBEO", "PFAD"],
+          "restrictions": "Red multiusuario. Alto riesgo de contaminación con trazas de CPO virgen si se pasa UCO; exige doble pigging."
+        },
+        {
+          "id": "JHR-VNC-03",
+          "operator": "Terminales Privadas (Vance / PGEO / Mewah)",
+          "route": "Tanques de Planta Pasir Gudang → Enlace Directo → VO1/VO2 y BT1/BT2",
+          "specs": "6\"-8\" (150-200 mm) | Inox SS316 (UCO) y Carbono (POME/SBEO)",
+          "rate": "300-500 TM/h",
+          "pumping_time_5000mt": "10 a 16 horas",
+          "allowed": ["UCO", "POME", "SBEO"],
+          "restrictions": "Líneas de refinería privada. Accesibles únicamente bajo contrato FOB o acuerdo de tolling/throughput."
+        }
+      ]
+    },
+    {
+      "id": "johor-pengerang-deepwater",
+      "name": "Pengerang Deepwater & Tanjung Bin",
+      "region": "Johor (Extremo Sur / Estrecho de Singapur)",
+      "lat": 1.3614,
+      "lng": 104.1481,
+      "draft": "16.0m - 24.0m (Aguas Ultra-Profundas)",
+      "berths": "Pengerang Deepwater Jetties / ATT Tanjung Bin",
+      "description": "Hub de aguas ultraprofundas. Epicentro de las nuevas biorrefinerías SAF/HVO y operaciones de blending transfronterizo.",
+      "pipelines": [
+        {
+          "id": "JHR-PDT-01",
+          "operator": "Dialog Pengerang / Pengerang Biorefinery",
+          "route": "Tanques Feedstock Renovable → Deepwater Jetty Rack → Liquid Berths",
+          "specs": "10\"-12\" (250-300 mm) | Acero Inox SS316L | Automatización total",
+          "rate": "600-900 TM/h",
+          "pumping_time_5000mt": "5.5 a 8.5 horas",
+          "allowed": ["UCO", "POME"],
+          "restrictions": "Estándar petroquímico de máxima exigencia. Cero tolerancia a sedimentos minerales (>0.05%) o agua libre."
+        },
+        {
+          "id": "JHR-ATB-02",
+          "operator": "ATT Tanjung Bin (VTTI)",
+          "route": "Parque Tanques Tanjung Bin → Jetty Manifold → Berths 1 a 4",
+          "specs": "8\"-10\" (200-250 mm) | Carbono con Epoxi / SS316 | Steam-traced",
+          "rate": "450-650 TM/h",
+          "pumping_time_5000mt": "7.5 a 11 horas",
+          "allowed": ["UCO", "POME", "PFAD"],
+          "restrictions": "Terminal clave para grandes traders que consolidan cargas transfronterizas con Singapur."
+        }
+      ]
+    },
+    {
+      "id": "kuantan-port",
+      "name": "Kuantan Port (Tanjung Gelang)",
+      "region": "Pahang (Costa Este)",
+      "lat": 3.9760,
+      "lng": 103.4285,
+      "draft": "11.2m - 12.2m",
+      "berths": "Palm Oil Berths POB 1-3; Liquid Chemical Berths LCB 1-3",
+      "description": "Concentra la producción de POME, SPO y SBEO de las extractoras de Pahang y Terengganu y del complejo químico de Gebeng.",
+      "pipelines": [
+        {
+          "id": "KUA-KPC-01",
+          "operator": "Kuantan Port Consortium (KPC) / FGV Bulkers",
+          "route": "Tanques FGV/KPC → Common Pipe-Rack → POB 1, POB 2 y POB 3",
+          "specs": "6\", 8\" y 10\" (150-250 mm) | Acero Carbono | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "SBEO", "PFAD"],
+          "restrictions": "Excelente para residuos pesados de extractora. Exige pigging previo para eliminar remanentes de CPO virgen."
+        },
+        {
+          "id": "KUA-GEB-02",
+          "operator": "KPC / Terminales Químicas de Gebeng",
+          "route": "Tanques Líquidos Especiales Gebeng → Chemical Pipe-Rack → LCB 1, 2 y POB 3",
+          "specs": "6\"-8\" (150-200 mm) | Acero Inox SS316 | Steam-traced",
+          "rate": "350-500 TM/h",
+          "pumping_time_5000mt": "10 a 14 horas",
+          "allowed": ["UCO", "POME"],
+          "restrictions": "Línea libre de sedimentos de tierras de blanqueo. Apta para exigencias de refinerías europeas HVO."
+        }
+      ]
+    },
+    {
+      "id": "kemaman-port",
+      "name": "Kemaman Port",
+      "region": "Terengganu (Costa Este)",
+      "lat": 4.2486,
+      "lng": 103.4681,
+      "draft": "11.0m - 14.0m",
+      "berths": "Liquid Chemical Berth (LCB) & East Wharf",
+      "description": "Puerto profundo alternativo a Kuantan para capturar la producción de Terengganu durante temporada alta o tifones.",
+      "pipelines": [
+        {
+          "id": "KEM-LCB-01",
+          "operator": "Kemaman Port Authority / Bulkers",
+          "route": "Tanques Costeros → Corredor LCB → Liquid Chemical Berth",
+          "specs": "8\" (200 mm) | Acero Inox SS304 y Carbono | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "PFAD"],
+          "restrictions": "Alta congestión con buques gaseros/químicos. Requiere reserva de atraque con 14 días de antelación."
+        }
+      ]
+    },
+    {
+      "id": "bintulu-port",
+      "name": "Bintulu Port (Biport Bulkers)",
+      "region": "Sarawak (Borneo)",
+      "lat": 3.2647,
+      "lng": 113.0672,
+      "draft": "13.5m - 14.0m (Carga completa buques MR)",
+      "berths": "Palm Oil Terminal (POT North & South Berths)",
+      "description": "El gigante de Sarawak. Concentra volúmenes masivos de POME, SPO y SBEO de las grandes plantaciones de Borneo.",
+      "pipelines": [
+        {
+          "id": "BTU-BBS-01",
+          "operator": "Biport Bulkers Sdn Bhd (BBSB)",
+          "route": "Tanques Aislados Revestidos → Red de 17 Líneas → POT North & South",
+          "specs": "8\" (200 mm) | Carbono con epoxi / Colectores Inox | Steam-traced (50-55°C)",
+          "rate": "400-600 TM/h",
+          "pumping_time_5000mt": "8.5 a 12.5 horas",
+          "allowed": ["UCO", "POME", "PFAD"],
+          "restrictions": "Segregación estricta con válvulas Double Block & Bleed y estaciones individuales de lanzamiento de pigs."
+        },
+        {
+          "id": "BTU-BBS-02",
+          "operator": "Biport Bulkers Sdn Bhd (BBSB)",
+          "route": "Tanques sin recubrir → Líneas Alta Viscosidad → POT North & South",
+          "specs": "8\"-10\" (200-250 mm) | Acero Carbono pared gruesa | Calderas 60°C",
+          "rate": "350-500 TM/h",
+          "pumping_time_5000mt": "10 a 14 horas",
+          "allowed": ["POME", "SPO", "SBEO"],
+          "restrictions": "Diseñada para soportar FFA > 20% y finos abrasivos de tierra de blanqueo sin dañar recubrimientos."
+        }
+      ]
+    },
+    {
+      "id": "lahad-datu-poic",
+      "name": "POIC Lahad Datu & Sandakan",
+      "region": "Sabah (Borneo Oriental)",
+      "lat": 5.0194,
+      "lng": 118.3582,
+      "draft": "16.0m - 20.0m (Lahad Datu) / 10.0m - 11.0m (Sandakan)",
+      "berths": "POIC Liquid Cargo Jetty / Sandakan Karamunting Pier",
+      "description": "Mayor densidad de extractoras de Malasia. Origen natural más competitivo para compra en origen de POME, SPO y SBEO.",
+      "pipelines": [
+        {
+          "id": "SBH-POI-01",
+          "operator": "POIC Bulk Terminal Sdn Bhd (Lahad Datu)",
+          "route": "Tanques PBTSB/Plantas → Pipeline Interchange (2.5 km) → POIC Liquid Jetty",
+          "specs": "8\"-10\" (200-250 mm) | Carbono y SS304 | Compresor integrado 14 bar + Steam-traced",
+          "rate": "350-500 TM/h",
+          "pumping_time_5000mt": "10 a 14 horas",
+          "allowed": ["POME", "SPO", "SBEO", "UCO"],
+          "restrictions": "El intercambiador central y el compresor de 14 bar permiten limpiar totalmente la línea antes de conectar el lote."
+        },
+        {
+          "id": "SBH-SDK-02",
+          "operator": "Karamunting Bulking / FGV / Wilmar (Sandakan)",
+          "route": "Tanques Karamunting → Overhead Jetty Rack → Sandakan Oil Jetty",
+          "specs": "8\" (200 mm) | Acero al Carbono | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "SBEO", "PFAD"],
+          "restrictions": "Prácticamente 100% dedicada a subproductos y residuos de extractora; volumen de UCO casi inexistente."
+        }
+      ]
+    },
+    {
+      "id": "sabah-kunak-tawau",
+      "name": "Kunak & Tawau Oil Jetties",
+      "region": "Sabah (Borneo Suroriental)",
+      "lat": 4.6881,
+      "lng": 118.2519,
+      "draft": "9.5m - 12.5m",
+      "berths": "Kunak Palm Oil Jetty / Tawau Liquid Pier",
+      "description": "Punto de salida directo para las megas plantaciones del sureste de Sabah, evitando flete terrestre hasta Lahad Datu.",
+      "pipelines": [
+        {
+          "id": "SBH-KNK-01",
+          "operator": "Kunak Bulking Installation",
+          "route": "Tanques Costeros Kunak → Trestle Pipe-Rack sobre mar → Kunak Jetty",
+          "specs": "8\" (200 mm) | Acero al Carbono | Steam-traced",
+          "rate": "300-450 TM/h",
+          "pumping_time_5000mt": "11 a 16.5 horas",
+          "allowed": ["POME", "SPO", "PFAD"],
+          "restrictions": "Línea fuertemente compartida con CPO comestible. Exige pigging y drenaje completo de válvulas para evitar contaminación ISCC."
+        }
+      ]
+    }
+  ],
+  "technical_rules": [
+    {
+      "rule": "Ley de Metales y Halógenos (UCO/POME para HVO/SAF)",
+      "detail": "Refinerías europeas exigen fósforo, cloro y metales casi nulos. Obligatorio tubería de Acero Inoxidable (SS304/SS316L) o epoxi intacto purgada con nitrógeno. Prohibido lavado con agua salada."
+    },
+    {
+      "rule": "Ley de Abrasión y Acidez (SBEO y SPO)",
+      "detail": "El SBEO contiene micro-partículas de tierra que desgastan recubrimientos epoxi a 500 TM/h. Bombear solo por tuberías de Acero al Carbono sin revestir (uncoated mild steel) con cestas de filtrado."
+    },
+    {
+      "rule": "Ley Termodinámica de Solidificación",
+      "detail": "POME (fusión ~38-42°C) y PFAD (~45-50°C) colapsan la tubería si baja de 45°C. La línea debe tener Steam-Tracing activo y soplado obligatorio antes de 30 minutos de parada de bomba."
+    },
+    {
+      "rule": "Ley de Trazabilidad ISCC EU y Aduana MPOB",
+      "detail": "Remanentes de CPO virgen en líneas no purgadas alteran el perfil de ácidos grasos y violan el balance de masas ISCC. Declarar UCO como SPO en aduanas acarrea riesgo de incautación."
+    }
+  ],
+  "spanish_ports": [
+    {
+      "id": "esp-bcn",
+      "name": "Puerto de Barcelona",
+      "region": "Mediterráneo",
+      "lat": 41.330,
+      "lng": 2.155,
+      "desc": "Terminales Muelle Químico / Inflamables. Principal entrada de UCO/POME al Mediterráneo vía Suez."
+    },
+    {
+      "id": "esp-tgn",
+      "name": "Puerto de Tarragona",
+      "region": "Mediterráneo",
+      "lat": 41.083,
+      "lng": 1.216,
+      "desc": "Hub petroquímico (Tepsa/Vopak). Excelente calado para buques MR post-Suez."
+    },
+    {
+      "id": "esp-hlv",
+      "name": "Puerto de Huelva",
+      "region": "Atlántico",
+      "lat": 37.188,
+      "lng": -6.915,
+      "desc": "Terminales Decal/Enagás. Destino principal para la ruta atlántica (Cabo de Buena Esperanza) evitando Suez."
+    }
+  ],
+  "waypoints": [
+    { "id": "singapore_strait", "name": "Estrecho de Singapur", "lat": 1.2, "lng": 103.5, "risk": "Alta congestión y cruce de tráfico. Riesgo de retraso 1-2 días." },
+    { "id": "malacca_north", "name": "Salida Estrecho de Malaca", "lat": 5.6, "lng": 97.8, "risk": "Piratería menor (robos a bordo). Inicio travesía oceánica." },
+    { "id": "sri_lanka", "name": "Tránsito Sur de Sri Lanka", "lat": 5.9, "lng": 80.2, "risk": "Tráfico denso. Cambio de clima hacia el Mar Arábigo." },
+    { "id": "bab_el_mandeb", "name": "Estrecho de Bab el-Mandeb", "lat": 12.5, "lng": 43.3, "risk": "CRÍTICO: Riesgo de ataques asimétricos (Hutíes). Dispara el War Risk Premium del seguro." },
+    { "id": "suez_canal", "name": "Canal de Suez", "lat": 29.9, "lng": 32.5, "risk": "Peajes masivos. Riesgo de bloqueo/congestión (Convoyes)." },
+    { "id": "cape_hope", "name": "Cabo de Buena Esperanza", "lat": -35.4, "lng": 19.5, "risk": "Clima extremo (Olas de las Agujas). Retrasos severos por reducción de velocidad del buque." },
+    { "id": "canary_islands", "name": "Tránsito Islas Canarias", "lat": 28.1, "lng": -16.5, "risk": "Zona habitual de bunkering (repostaje) antes de entrar a Europa." }
+  ],
+  "maritime_routes": {
+    "suez": {
+      "id": "route_suez",
+      "name": "Ruta Canal de Suez (A Barcelona/Tarragona)",
+      "color": "#3b82f6",
+      "transit_days": "24 - 28 días",
+      "path": [
+        [5.6, 97.8], [5.9, 80.2], [12.6, 44.9], [12.5, 43.3], [27.0, 34.5], [29.9, 32.5], [31.2, 32.3], [36.5, 14.8], [41.083, 1.216], [41.330, 2.155]
+      ]
+    },
+    "cape": {
+      "id": "route_cape",
+      "name": "Ruta Cabo de Buena Esperanza (A Huelva)",
+      "color": "#10b981",
+      "transit_days": "36 - 42 días",
+      "path": [
+        [5.6, 97.8], [-5.0, 75.0], [-25.0, 50.0], [-35.4, 19.5], [-10.0, -5.0], [14.0, -20.0], [28.1, -16.5], [35.5, -8.5], [37.188, -6.915]
+      ]
+    }
+  }
+}
